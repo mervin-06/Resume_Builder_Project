@@ -11,15 +11,6 @@ export default function Summary() {
         skill: false,
         interest: false,
     })
-    const handleProject_title = (e) => {
-        const count = Number(e.target.value);
-
-
-        const newProject = Array.from({ length: count }, () => ({
-            title: "",
-            description: ""
-        }))
-    }
     const handleSummarySummit = () => {
         const UserError = {
             degree: false,
@@ -89,7 +80,7 @@ export default function Summary() {
                         type="text"
                         placeholder="Enter your specific area of interest"
                         name="specific"
-                        value={summary.interest}
+                        value={summary.Interest}
                         onChange={(e) => setSummary({ ...summary, Interest: e.target.value })}
                     />
                 </div>
@@ -97,7 +88,7 @@ export default function Summary() {
                     type="number"
                     placeholder="Number of projects"
                     onChange={(e) => {
-                        const count = Number(e.target.value);
+                        const count = Math.max(0, Number(e.target.value) || 0);
                         setSummary({
                             ...summary,
                             projects: Array.from({ length: count }, () => ({

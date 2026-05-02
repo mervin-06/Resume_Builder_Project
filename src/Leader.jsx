@@ -7,11 +7,14 @@ import Education from "./Education";
 import Resume from "./Resume";
 import { useState } from "react";
 export default function Leader() {
+    
     const [personal, setPersonal] = useState({
         name: "",
         age: "",
         email: "",
         contact: "",
+        port:"",
+        git:"",
     });
 
     const [summary, setSummary] = useState({
